@@ -1,4 +1,4 @@
-from laberinto_manager import LaberintoManager
+from archivo import LaberintoManager
 
 def main():
     laberinto_manager = LaberintoManager()
@@ -10,5 +10,5 @@ def main():
         # Mover al jugador
         # Otros aspectos del juego
 
-if __name__ == "__main__":
-    main()
+        if __name__ == "__main__":
+            main()
