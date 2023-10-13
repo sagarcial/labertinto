@@ -1,25 +1,26 @@
 @startuml
+left to right direction
+
 class Laberinto {
   +matriz: ElementoLaberinto[][]
-  +dibujarLaberinto()
-  +jugadorLlegoASalida()
+  +MostrarLaberinto()
 }
 
 class ElementoLaberinto {
-  +descripcion()
+  +valor
+  +obtenervalor()
+  +dibujarelemento()
 }
 
 class Pared {
-  +descripcion()
 }
-
+class Jugador {
+}
 class EspacioLibre {
-  +descripcion()
 }
 
-Laberinto --> ElementoLaberinto : contiene
-Laberinto --|> Pared
-Laberinto --|> EspacioLibre
+Laberinto  -- ElementoLaberinto 
 ElementoLaberinto <|-- Pared
 ElementoLaberinto <|-- EspacioLibre
+ElementoLaberinto <|-- Jugador
 @enduml
