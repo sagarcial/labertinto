@@ -24,8 +24,6 @@ class Meta {
 class LaberintoManager {
   +CargarLaberintoDesdeArchivo()
   +DibujarLaberinto()
-  +MoverJugador()
-  // Otras operaciones necesarias
 }
 
 Laberinto  -- ElementoLaberinto 
