@@ -18,9 +18,12 @@ class Jugador {
 }
 class EspacioLibre {
 }
+class meta {
+}
 
 Laberinto  -- ElementoLaberinto 
 ElementoLaberinto <|-- Pared
 ElementoLaberinto <|-- EspacioLibre
 ElementoLaberinto <|-- Jugador
+ElementoLaberinto <|-- meta
 @enduml
