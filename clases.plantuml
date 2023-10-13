@@ -1,27 +1,39 @@
 @startuml
-left to right direction
+class Laberinto {
+  +matriz: ElementoLaberinto[][]
+  +jugador: Jugador
+  +cargarLaberinto()
+  +mostrarLaberinto()
+  +jugadorLlegoASalida()
+}
 
-abstract Carta
-Jugador <|-- MazoFrances
-Jugador <|-- MazoEspanol
-Jugador o-- Carta
+class Jugador {
+  +posicion: Posicion
+  +moverArriba()
+  +moverAbajo()
+  +moverIzquierda()
+  +moverDerecha()
+}
 
-Juego : iniciar_juego()
-Juego : mostrar_juego()
-Juego : valorar_juego()
-Juego : jugar()
-Juego : Mazo mazo
-Juego : Mazo jugador1
-Juego : Mazo jugador2
+class ElementoLaberinto {
+  +descripcion()
+}
 
-Carta : valor
-Carta : pinta
-Carta : obtener_valor()
-Carta : mostrar_carta()
+class Pared {
+  +descripcion()
+}
 
-Mazo : Carta[] cartas
-Mazo : mostrar_cartas()
-Mazo : obtener_valor_mazo()
-Mazo : entregar_carta()
+class EspacioLibre {
+  +descripcion()
+}
 
+Laberinto --> ElementoLaberinto : contiene
+Laberinto --> Jugador : contiene
+Laberinto --|> Pared
+Laberinto --|> EspacioLibre
+Jugador -- Laberinto : interactúa con
+Pared --|> ElementoLaberinto
+EspacioLibre --|> ElementoLaberinto
+ElementoLaberinto <|-- Pared
+ElementoLaberinto <|-- EspacioLibre
 @enduml
