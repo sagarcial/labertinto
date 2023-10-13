@@ -18,12 +18,20 @@ class Jugador {
 }
 class EspacioLibre {
 }
-class meta {
+class Meta {
+}
+
+class LaberintoManager {
+  +CargarLaberintoDesdeArchivo()
+  +DibujarLaberinto()
+  +MoverJugador()
+  // Otras operaciones necesarias
 }
 
 Laberinto  -- ElementoLaberinto 
 ElementoLaberinto <|-- Pared
 ElementoLaberinto <|-- EspacioLibre
 ElementoLaberinto <|-- Jugador
-ElementoLaberinto <|-- meta
+ElementoLaberinto <|-- Meta
+LaberintoManager -- Laberinto
 @enduml
