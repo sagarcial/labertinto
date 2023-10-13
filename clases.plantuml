@@ -1,18 +1,8 @@
 @startuml
 class Laberinto {
   +matriz: ElementoLaberinto[][]
-  +jugador: Jugador
-  +cargarLaberinto()
-  +mostrarLaberinto()
+  +dibujarLaberinto()
   +jugadorLlegoASalida()
-}
-
-class Jugador {
-  +posicion: Posicion
-  +moverArriba()
-  +moverAbajo()
-  +moverIzquierda()
-  +moverDerecha()
 }
 
 class ElementoLaberinto {
@@ -28,12 +18,8 @@ class EspacioLibre {
 }
 
 Laberinto --> ElementoLaberinto : contiene
-Laberinto --> Jugador : contiene
 Laberinto --|> Pared
 Laberinto --|> EspacioLibre
-Jugador -- Laberinto : interactúa con
-Pared --|> ElementoLaberinto
-EspacioLibre --|> ElementoLaberinto
 ElementoLaberinto <|-- Pared
 ElementoLaberinto <|-- EspacioLibre
 @enduml
